@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 
 import curriculumRoute from "./src/routes/curriculumRoute.js";
 import jobRoute from "./src/routes/jobRoute.js";
+import userRoute from "./src/routes/userRoute.js";
+
 import { connectToDatabase } from "./src/database/db.js";
 
 dotenv.config();
@@ -22,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/curriculum", curriculumRoute);
 app.use("/job", jobRoute);
+app.use("/user", userRoute);
 
 app.use((request, response, next) => {
     response.setHeader("Access-Control-Allow-Origin", "*");

@@ -1,7 +1,9 @@
+// importing bcrypt for encrypting, jsonwebtoken for generate token and service to interact to database
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import userService from "../services/userService.js";
 
+// method responsible for create a user in the database
 const create = async (request, response) => {
     try {
         const { firstName, lastName, email, password } = request.body;
@@ -43,6 +45,7 @@ const create = async (request, response) => {
     }
 };
 
+// method responsible for generate login for users already signed and generate tokens for each one of them
 const login = async (request, response) => {
     try {
         const { email, password } = request.body;
@@ -79,6 +82,7 @@ const login = async (request, response) => {
     }
 };
 
+// exporting methods created before
 export default {
     create,
     login,

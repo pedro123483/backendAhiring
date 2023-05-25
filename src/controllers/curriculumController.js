@@ -1,9 +1,12 @@
+// importing modules required
 import pdfParse from "pdf-parse/lib/pdf-parse.js";
 import { Configuration, OpenAIApi } from "openai";
 import dotenv from "dotenv";
 
+// configuring dotenv 
 dotenv.config();
 
+// making configuration needed to interact with OPENAI API
 const configuration = new Configuration({
     organization: process.env.OPENAI_ORGANIZATION,
     apiKey: process.env.OPENAI_API_KEY,
@@ -11,6 +14,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
+// fetch open ai api and create summary of the content
 const create = async (request, response) => {
     try {
         if(!request.files && !request.files.pdfFile) {
@@ -42,6 +46,7 @@ const create = async (request, response) => {
     }
 };
 
+// export method created before
 export default {
     create,
 };

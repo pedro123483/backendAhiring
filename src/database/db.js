@@ -1,5 +1,7 @@
+// mongoose required for interacting with database
 import mongoose from "mongoose";
 
+// function responsible for connecting to mongodb atlas database
 export const connectToDatabase = () => {
     console.log("Connecting to database...");
     const params = {

@@ -1,2 +1,2 @@
 # backendAhiring
-Project for Makers Fellowship Challenge
+Gen AI Project for Makers Fellowship Challenge
